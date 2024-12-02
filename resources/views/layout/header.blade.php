@@ -120,17 +120,17 @@
                     </a>
                 @endif
                   <div class="dropdown-menu text-center dropdown-user" aria-labelledby="personalMenu">
-                      <a class="dropdown-item" href="{{route('profile')}}">Thông tin cá nhân</a>
+                      <a class="dropdown-item border-bottom" href="{{route('profile')}}">Thông tin cá nhân</a>
 
 
-                      <a class="dropdown-item" href="{{route('changePassword')}}">Đổi mật khẩu</a>
+                      <a class="dropdown-item border-bottom" href="{{route('changePassword')}}">Đổi mật khẩu</a>
                         @if(Auth::user()->role_id != 3)
-                        <button type="button" class="btn dropdown-item d-flex align-items-center justify-content-center" data-toggle="modal" data-target="#infoModal">Thông báo<span class="badge ml-2 badge-danger rounded-circle d-flex align-items-center justify-content-center" style="width:25px ;font-size:16px">{{$count_newAppliedCv}}</span></button>
-                        <a class="dropdown-item" href="{{route('viewJobPage')}}">Công việc đã Đăng</a>
-                        <a class="dropdown-item" href="{{route('checkout.history')}}">Lịch sử nạp tiền</a>
+                        <button type="button" class="btn dropdown-item d-flex align-items-center justify-content-center border-bottom" data-toggle="modal" data-target="#infoModal">Thông báo<span class="badge ml-2 badge-danger rounded-circle d-flex align-items-center justify-content-center" style="width:25px ;font-size:16px">{{$count_newAppliedCv}}</span></button>
+                        <a class="dropdown-item border-bottom" href="{{route('viewJobPage')}}">Công việc đã Đăng</a>
+                        <a class="dropdown-item border-bottom" href="{{route('checkout.history')}}">Lịch sử nạp tiền</a>
                         @else
-                        <a class="dropdown-item" href="{{route('CvApplied')}}">Công việc đã ứng tuyển</a>
-                        <a class="dropdown-item" href="{{route('JobSaved')}}">Công việc đã lưu lại</a>
+                        <a class="dropdown-item text-wrap border-bottom" href="{{route('CvApplied')}}">Công việc đã ứng tuyển</a>
+                        <a class="dropdown-item border-bottom" href="{{route('JobSaved')}}">Công việc đã lưu lại</a>
                         @endif
                       <form class="text-center" action="{{route('logout')}}" method="post">
                         @csrf
